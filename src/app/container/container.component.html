@@ -1,0 +1,14 @@
+<div class="container p-4 flex flex-col space-y-4 mx-auto">
+  <app-header
+    (toggleAddTask)="toggleTaskCreator()"
+    [showCreator]="showTaskCreator"
+  ></app-header>
+  <app-form
+    (AddNewTask)="addTaskToLocalStorage($event)"
+    [showCreator]="showTaskCreator"
+  ></app-form>
+  <app-taskbar
+    (removeToDoByIndex)="removeTaskFromLocalStorage($event)"
+    [tasks]="tasks"
+  ></app-taskbar>
+</div>
